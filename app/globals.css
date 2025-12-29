@@ -38,6 +38,23 @@
   margin: 0;
 }
 
+/* Main content padding for fixed navigation */
+main {
+  padding-top: 64px; /* 16 * 4 = 64px for mobile */
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-top: 80px; /* 20 * 4 = 80px for tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-top: 96px; /* 24 * 4 = 96px for desktop */
+  }
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 14px;
