@@ -13,33 +13,33 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/[0.08] bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-14 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr] lg:gap-16">
+    <footer className="border-t-4 border-black bg-white">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14 lg:py-16">
+        <div className="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr] md:gap-10 lg:gap-16">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="flex h-9 w-9 items-center justify-center border-2 border-black bg-[#00ff00] text-sm font-bold">
+            <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-5">
+              <span className="flex h-8 w-8 md:h-9 md:w-9 items-center justify-center border-2 border-black bg-[#00ff00] text-xs md:text-sm font-black">
                 JP
               </span>
-              <span className="font-semibold text-black">Jed Park</span>
+              <span className="text-sm md:text-base font-bold text-black">Jed Park</span>
             </div>
-            <p className="text-sm text-black/55 max-w-xs leading-relaxed">
+            <p className="text-xs md:text-sm text-black/60 max-w-xs leading-relaxed">
               AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현하는 풀스택 개발자입니다.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="text-[11px] font-semibold text-black/35 uppercase tracking-wider mb-5">
+            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-5">
               Navigation
             </p>
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col gap-2 md:gap-3">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-black/65 hover:text-black transition-colors"
+                  className="text-xs md:text-sm font-semibold text-black/60 hover:text-black transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -49,17 +49,17 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="text-[11px] font-semibold text-black/35 uppercase tracking-wider mb-5">
+            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-5">
               Connect
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2 md:gap-3">
               {socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-sm text-black/65 hover:text-black transition-colors"
+                  className="text-xs md:text-sm font-semibold text-black/60 hover:text-black transition-colors"
                 >
                   {social.label}
                 </a>
@@ -69,11 +69,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-6 border-t border-black/[0.06] flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-black/40">
+        <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t-2 border-black/10 flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-3">
+          <p className="text-[10px] md:text-xs text-black/50 font-semibold">
             © 2025 Jed Park. All rights reserved.
           </p>
-          <p className="text-xs text-black/40">
+          <p className="text-[10px] md:text-xs text-black/50 font-semibold">
             Built with Next.js & Tailwind CSS
           </p>
         </div>
