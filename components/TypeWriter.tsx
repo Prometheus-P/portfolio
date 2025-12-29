@@ -37,9 +37,9 @@ export default function TypeWriter({ texts }: TypeWriterProps) {
   }, [currentText, isDeleting, currentTextIndex, texts]);
 
   return (
-    <span className="font-display text-white">
+    <span className="font-bold uppercase text-black">
       {currentText}
-      <span className="ml-1 animate-pulse text-red-400">|</span>
+      <span className="ml-1 animate-blink bg-[#00ff00] text-[#00ff00]">_</span>
     </span>
   );
 }

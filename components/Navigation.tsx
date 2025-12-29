@@ -26,22 +26,20 @@ export default function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all",
-        scrolled
-          ? "bg-black/70 backdrop-blur-lg shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-          : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all border-b-4 border-black",
+        scrolled ? "bg-white" : "bg-white"
       )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="group flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg font-semibold text-white shadow-lg">
-            J
+          <span className="flex h-12 w-12 items-center justify-center border-4 border-black bg-[#00ff00] text-xl font-black text-black">
+            JP
           </span>
-          <span className="hidden text-sm uppercase tracking-[0.3em] text-white/70 md:inline">
+          <span className="hidden text-sm font-bold uppercase tracking-wider text-black md:inline">
             Jed Park
           </span>
         </Link>
-        <div className="flex items-center gap-6 text-sm uppercase tracking-[0.2em] text-white/70">
+        <div className="flex items-center gap-1">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -50,17 +48,13 @@ export default function Navigation() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "relative transition-colors hover:text-white",
-                  isActive && "text-white"
+                  "px-4 py-2 text-sm font-bold uppercase tracking-wider transition-all border-4",
+                  isActive
+                    ? "border-black bg-black text-white"
+                    : "border-transparent text-black hover:border-black"
                 )}
               >
                 {item.label}
-                <span
-                  className={cn(
-                    "absolute -bottom-2 left-0 h-[2px] w-full scale-x-0 bg-gradient-to-r from-red-500 to-orange-400 transition-transform",
-                    isActive && "scale-x-100"
-                  )}
-                />
               </Link>
             );
           })}

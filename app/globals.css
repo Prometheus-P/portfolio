@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --primary: #ef4444;
-  --primary-dark: #dc2626;
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #00ff00;
+  --accent-alt: #ff00ff;
+  --border: 3px solid #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-body);
+  --font-sans: "JetBrains Mono", "Courier New", monospace;
 }
 
 * {
@@ -26,68 +27,150 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), "Times New Roman", serif;
+  font-family: "JetBrains Mono", "Courier New", monospace;
 }
 
 .font-display {
-  font-family: var(--font-display), "Times New Roman", serif;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .font-body {
-  font-family: var(--font-body), "Times New Roman", serif;
+  font-family: "JetBrains Mono", "Courier New", monospace;
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Brutalist components */
+.brutal-box {
+  border: 3px solid #000;
+  background: #fff;
+  box-shadow: 8px 8px 0 #000;
+  transition: all 0.1s ease;
 }
 
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+.brutal-box:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(4px, 4px);
 }
 
-.animate-fade-up {
-  animation: fade-up 0.8s ease-out both;
+.brutal-btn {
+  border: 3px solid #000;
+  background: #00ff00;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.1s ease;
+  cursor: pointer;
 }
 
-.animate-float-slow {
-  animation: float-slow 6s ease-in-out infinite;
+.brutal-btn:hover {
+  box-shadow: 2px 2px 0 #000;
+  transform: translate(2px, 2px);
 }
 
+.brutal-btn-outline {
+  border: 3px solid #000;
+  background: transparent;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.brutal-btn-outline:hover {
+  box-shadow: 2px 2px 0 #000;
+  transform: translate(2px, 2px);
+  background: #000;
+  color: #fff;
+}
+
+.brutal-tag {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.brutal-link {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  font-weight: 600;
+}
+
+.brutal-link:hover {
+  background: #00ff00;
+}
+
+/* Animations */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-glitch:hover {
+  animation: glitch 0.3s ease infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Selection */
 ::selection {
-  background: var(--primary);
-  color: white;
+  background: #00ff00;
+  color: #000;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #fff;
+  border-left: 3px solid #000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
+  background: #000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
+  background: #00ff00;
+}
+
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

@@ -7,53 +7,55 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="px-6 pb-24 text-white">
+    <div className="px-6 pb-24 text-black">
       <section className="mx-auto max-w-3xl space-y-8">
-        <p className="text-xs uppercase tracking-[0.5em] text-white/50">
-          Contact
-        </p>
-        <h1 className="font-display text-4xl text-white sm:text-5xl">
-          함께 만들 프로젝트가 있다면
+        <div className="inline-block border-4 border-black bg-[#ff00ff] px-4 py-2">
+          <p className="text-xs font-bold uppercase tracking-wider">Contact</p>
+        </div>
+        <h1 className="text-4xl font-black uppercase text-black sm:text-5xl">
+          함께 만들
+          <br />
+          프로젝트가 있다면
         </h1>
-        <p className="text-lg text-white/70">
+        <p className="text-lg text-black/80 border-l-4 border-black pl-4">
           스타트업 빌딩, AI 제품, 엔터프라이즈 자동화까지 다양한 협업을
           환영합니다. 아래 채널로 편하게 연락해주세요.
         </p>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/50">
+          <div className="border-4 border-black bg-white p-6 hover:shadow-[8px_8px_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all">
+            <p className="text-xs font-bold uppercase tracking-wider text-black/60">
               Email
             </p>
-            <p className="mt-3 text-lg text-white">parkdavid31@gmail.com</p>
+            <p className="mt-3 text-xl font-black text-black">parkdavid31@gmail.com</p>
             <a
               href="mailto:parkdavid31@gmail.com"
-              className="mt-4 inline-flex text-sm uppercase tracking-[0.2em] text-white/70 hover:text-white"
+              className="mt-4 inline-flex border-4 border-black bg-[#00ff00] px-4 py-2 text-sm font-bold uppercase tracking-wider hover:shadow-[4px_4px_0_#000] transition-all"
             >
               Send a message →
             </a>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/50">
+          <div className="border-4 border-black bg-white p-6 hover:shadow-[8px_8px_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all">
+            <p className="text-xs font-bold uppercase tracking-wider text-black/60">
               GitHub
             </p>
-            <p className="mt-3 text-lg text-white">github.com/x-ordo</p>
+            <p className="mt-3 text-xl font-black text-black">github.com/x-ordo</p>
             <a
               href="https://github.com/x-ordo"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex text-sm uppercase tracking-[0.2em] text-white/70 hover:text-white"
+              className="mt-4 inline-flex border-4 border-black bg-black px-4 py-2 text-sm font-bold uppercase tracking-wider text-white hover:bg-[#00ff00] hover:text-black transition-all"
             >
               Visit profile →
             </a>
           </div>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-red-500/20 to-orange-500/5 p-8">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/50">
+        <div className="border-4 border-black bg-[#ffff00] p-8">
+          <p className="text-xs font-bold uppercase tracking-wider text-black/60">
             Focus Areas
           </p>
-          <div className="mt-4 flex flex-wrap gap-3 text-sm text-white/70">
+          <div className="mt-4 flex flex-wrap gap-3">
             {[
               "LLM Product Design",
               "B2B SaaS",
@@ -63,7 +65,7 @@ export default function ContactPage() {
             ].map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-white/10 bg-black/30 px-4 py-2"
+                className="border-4 border-black bg-white px-4 py-2 text-sm font-bold uppercase"
               >
                 {item}
               </span>

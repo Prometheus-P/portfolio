@@ -9,15 +9,17 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="px-6 pb-24 text-white">
+    <div className="px-6 pb-24 text-black">
       <section className="mx-auto max-w-6xl space-y-6">
-        <p className="text-xs uppercase tracking-[0.5em] text-white/50">
-          Portfolio
-        </p>
-        <h1 className="font-display text-4xl text-white sm:text-5xl">
+        <div className="inline-block border-4 border-black bg-[#00ffff] px-4 py-2">
+          <p className="text-xs font-bold uppercase tracking-wider">
+            Portfolio
+          </p>
+        </div>
+        <h1 className="text-4xl font-black uppercase text-black sm:text-5xl">
           25개 프로젝트
         </h1>
-        <p className="max-w-2xl text-sm text-white/70">
+        <p className="max-w-2xl text-sm text-black/70 border-l-4 border-black pl-4">
           AI/ML, SaaS, 자동화, 분석까지 다양한 도메인의 제품을 설계하고
           구현했습니다.
         </p>

@@ -32,14 +32,15 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
 
   return (
     <div className="space-y-10">
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         <button
           type="button"
           onClick={() => setActive("all")}
           className={cn(
-            "rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/70 transition",
-            active === "all" &&
-              "border-white/40 bg-white/10 text-white shadow-lg"
+            "border-4 border-black px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all",
+            active === "all"
+              ? "bg-black text-white shadow-[4px_4px_0_#00ff00]"
+              : "bg-white text-black hover:bg-[#00ff00]"
           )}
         >
           All Projects
@@ -50,9 +51,10 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
             type="button"
             onClick={() => setActive(category.key)}
             className={cn(
-              "rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/70 transition",
-              active === category.key &&
-                "border-white/40 bg-white/10 text-white shadow-lg"
+              "border-4 border-black px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all",
+              active === category.key
+                ? "bg-black text-white shadow-[4px_4px_0_#00ff00]"
+                : "bg-white text-black hover:bg-[#00ff00]"
             )}
           >
             {category.label} ({category.count})

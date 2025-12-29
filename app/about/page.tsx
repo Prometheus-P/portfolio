@@ -7,15 +7,17 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="px-6 pb-24 text-white">
+    <div className="px-6 pb-24 text-black">
       <section className="mx-auto max-w-4xl space-y-8">
-        <p className="text-xs uppercase tracking-[0.5em] text-white/50">
-          About
-        </p>
-        <h1 className="font-display text-4xl text-white sm:text-5xl">
-          기술과 비즈니스를 연결하는 개발자
+        <div className="inline-block border-4 border-black bg-[#00ff00] px-4 py-2">
+          <p className="text-xs font-bold uppercase tracking-wider">About</p>
+        </div>
+        <h1 className="text-4xl font-black uppercase text-black sm:text-5xl">
+          기술과 비즈니스를
+          <br />
+          연결하는 개발자
         </h1>
-        <p className="text-lg text-white/70">
+        <p className="text-lg text-black/80 border-l-4 border-black pl-4">
           Jed Park은 AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를
           제품으로 구현합니다. 고대의 지혜와 현대 기술을 연결하는 관점으로
           시스템을 설계합니다.
@@ -45,23 +47,25 @@ export default function AboutPage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+              className="border-4 border-black bg-white p-6 hover:shadow-[8px_8px_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all"
             >
-              <h3 className="font-display text-xl text-white">
+              <h3 className="text-xl font-black uppercase text-black">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm text-white/70">{item.description}</p>
+              <p className="mt-3 text-sm text-black/70">{item.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mx-auto mt-16 max-w-4xl">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-          <p className="text-xs uppercase tracking-[0.5em] text-white/50">
-            Tech Stack
-          </p>
-          <h2 className="font-display mt-4 text-3xl text-white">
+        <div className="border-4 border-black bg-white p-8">
+          <div className="inline-block border-4 border-black bg-[#ff00ff] px-4 py-2 mb-6">
+            <p className="text-xs font-bold uppercase tracking-wider">
+              Tech Stack
+            </p>
+          </div>
+          <h2 className="text-3xl font-black uppercase text-black">
             Backend · Data · AI
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -99,16 +103,16 @@ export default function AboutPage() {
             ].map((group) => (
               <div
                 key={group.title}
-                className="rounded-3xl border border-white/10 bg-black/30 p-6"
+                className="border-4 border-black bg-white p-6"
               >
-                <h3 className="font-display text-xl text-white">
+                <h3 className="text-xl font-black uppercase text-black">
                   {group.title}
                 </h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70"
+                      className="border-2 border-black px-3 py-1 text-xs font-bold uppercase hover:bg-[#00ff00] transition-colors"
                     >
                       {item}
                     </span>
@@ -121,14 +125,18 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto mt-16 max-w-4xl">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-black/40 p-8">
-          <p className="text-xs uppercase tracking-[0.5em] text-white/50">
-            Philosophy
-          </p>
-          <h2 className="font-display mt-4 text-3xl text-white">
-            Bridging the mystical with the technological
+        <div className="border-4 border-black bg-[#00ffff] p-8">
+          <div className="inline-block border-4 border-black bg-white px-4 py-2 mb-6">
+            <p className="text-xs font-bold uppercase tracking-wider">
+              Philosophy
+            </p>
+          </div>
+          <h2 className="text-3xl font-black uppercase text-black">
+            Bridging the mystical
+            <br />
+            with the technological
           </h2>
-          <p className="mt-4 text-sm text-white/70">
+          <p className="mt-4 text-sm text-black/80">
             실용적인 AI 응용, 사용자 중심 설계, 지속적 학습을 핵심 가치로 삼습니다.
             기술을 통해 실질적인 비즈니스 가치를 만드는 데 집중합니다.
           </p>

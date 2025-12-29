@@ -4,34 +4,51 @@ import TypeWriter from "./TypeWriter";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden px-6 pb-20 pt-10">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+      {/* Marquee banner */}
+      <div className="mb-12 -mx-6 border-y-4 border-black bg-[#00ff00] py-3 overflow-hidden">
+        <div className="marquee">
+          <span className="marquee-content text-sm font-bold uppercase tracking-wider">
+            DEVELOPER & ENTREPRENEUR • AI/ML SPECIALIST • FULL-STACK ENGINEER • LLM ORCHESTRATION • PRODUCT BUILDER • DEVELOPER & ENTREPRENEUR • AI/ML SPECIALIST • FULL-STACK ENGINEER • LLM ORCHESTRATION • PRODUCT BUILDER •{" "}
+          </span>
+        </div>
+      </div>
+
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
         <div className="space-y-8">
-          <p className="text-xs uppercase tracking-[0.5em] text-white/50">
-            Developer & Entrepreneur
-          </p>
-          <h1 className="font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
-            AI로 미래를 설계하고, 비즈니스 가치를 구현합니다.
+          <div className="inline-block border-4 border-black bg-white px-4 py-2">
+            <p className="text-xs font-bold uppercase tracking-wider">
+              Developer & Entrepreneur
+            </p>
+          </div>
+          <h1 className="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-6xl">
+            AI로 미래를
+            <br />
+            <span className="bg-[#00ff00]">설계하고,</span>
+            <br />
+            비즈니스 가치를
+            <br />
+            구현합니다.
           </h1>
-          <p className="text-lg text-white/70">
+          <p className="text-lg text-black/80 max-w-xl border-l-4 border-black pl-4">
             Jed Park은 제품, 시스템, 비즈니스를 연결하는 풀스택 개발자입니다.
             LLM 기반 서비스 설계, 자동화 파이프라인, 데이터 중심 제품을 구축합니다.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/projects"
-              className="rounded-full bg-gradient-to-r from-red-500 to-orange-500 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-red-500/20 transition hover:-translate-y-0.5"
+              className="brutal-btn px-8 py-4 text-sm font-bold uppercase tracking-wider"
             >
-              View Projects
+              View Projects →
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-white/40 hover:text-white"
+              className="brutal-btn-outline px-8 py-4 text-sm font-bold uppercase tracking-wider"
             >
               Contact
             </Link>
           </div>
-          <div className="flex items-center gap-3 text-sm text-white/70">
-            <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+          <div className="flex items-center gap-3 text-sm font-bold text-black">
+            <span className="inline-flex h-3 w-3 animate-blink bg-[#00ff00] border-2 border-black" />
             <TypeWriter
               texts={[
                 "LLM & RAG Specialist",
@@ -41,34 +58,34 @@ export default function Hero() {
             />
           </div>
         </div>
+
         <div className="relative">
-          <div className="animate-float-slow rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
-            <div className="flex items-center justify-between">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/50">
+          <div className="brutal-box p-8">
+            <div className="flex items-center justify-between border-b-4 border-black pb-4 mb-6">
+              <p className="text-xs font-bold uppercase tracking-wider">
                 Signature Stack
               </p>
-              <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/60">
+              <span className="border-4 border-black bg-[#ff00ff] px-3 py-1 text-xs font-bold text-black">
                 2025
               </span>
             </div>
-            <div className="mt-6 grid gap-4">
+            <div className="grid gap-4">
               {[
-                "LLM Orchestration",
-                "Event-driven Systems",
-                "Product Analytics",
-                "Enterprise Automation",
+                { name: "LLM Orchestration", status: "LIVE" },
+                { name: "Event-driven Systems", status: "LIVE" },
+                { name: "Product Analytics", status: "LIVE" },
+                { name: "Enterprise Automation", status: "LIVE" },
               ].map((item) => (
                 <div
-                  key={item}
-                  className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                  key={item.name}
+                  className="flex items-center justify-between border-4 border-black bg-white px-4 py-3 hover:bg-[#00ff00] transition-colors"
                 >
-                  <span className="text-sm text-white/80">{item}</span>
-                  <span className="text-xs text-white/40">Live</span>
+                  <span className="text-sm font-bold text-black">{item.name}</span>
+                  <span className="text-xs font-bold text-black/60">{item.status}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="pointer-events-none absolute -right-6 -top-8 h-28 w-28 rounded-full bg-gradient-to-br from-red-500/30 to-orange-500/0 blur-2xl" />
         </div>
       </div>
     </section>

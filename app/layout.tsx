@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Newsreader, Syne } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PixelDog from "../components/PixelDog";
 
-const syne = Syne({
-  variable: "--font-display",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-});
-
-const newsreader = Newsreader({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -54,17 +48,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body
-        className={`${syne.variable} ${newsreader.variable} antialiased`}
-      >
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-[#0a0a0a]" />
-          <div className="absolute -top-24 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.18),rgba(239,68,68,0))]" />
-          <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.15),rgba(245,158,11,0))]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-40" />
+      <body className={`${jetbrains.variable} font-mono antialiased`}>
+        {/* Grid background */}
+        <div className="pointer-events-none fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-white" />
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, #000 1px, transparent 1px),
+                linear-gradient(to bottom, #000 1px, transparent 1px)
+              `,
+              backgroundSize: "40px 40px",
+            }}
+          />
         </div>
         <Navigation />
-        <main className="min-h-screen pt-24">{children}</main>
+        <main className="min-h-screen pt-20">{children}</main>
         <Footer />
         <PixelDog />
       </body>
