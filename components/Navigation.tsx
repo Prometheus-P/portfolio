@@ -15,6 +15,7 @@ const navItems = [
 export default function Navigation() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,6 +23,11 @@ export default function Navigation() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -43,8 +49,8 @@ export default function Navigation() {
           </span>
         </Link>
 
-        {/* Nav Links */}
-        <div className="flex items-center gap-1 lg:gap-2">
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-1 lg:gap-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -67,7 +73,63 @@ export default function Navigation() {
             );
           })}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden flex items-center justify-center w-10 h-10 border-2 border-black bg-white transition-all hover:shadow-[3px_3px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5"
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {mobileOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden border-t-2 border-black bg-white">
+          <div className="px-6 py-4 space-y-1">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "block px-4 py-3 text-sm font-semibold uppercase tracking-wider border-2 transition-all",
+                    isActive
+                      ? "border-black bg-[#00ff00] text-black shadow-[4px_4px_0_#000]"
+                      : "border-transparent text-black/70 hover:border-black hover:bg-black/5"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
