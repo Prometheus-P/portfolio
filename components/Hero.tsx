@@ -89,7 +89,7 @@ export default function Hero() {
             ))}
 
             {/* Signature Stack */}
-            <div className="card-elevated p-6 bg-black text-white">
+            <div className="p-6 border-2 border-black bg-black text-white transition-all duration-200 hover:shadow-[8px_8px_0_#22c55e] hover:-translate-x-1 hover:-translate-y-1">
               <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-3">
                 Signature Stack
               </p>
