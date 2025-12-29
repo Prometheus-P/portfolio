@@ -388,21 +388,6 @@ export const projects: Project[] = [
 
   // ===== Developer Tools =====
   {
-    slug: "ai-software-factory",
-    name: "AI Software Factory",
-    summary: "AI 기반 소프트웨어 개발 공장 템플릿 (SDD + TDD)",
-    description:
-      "사람은 판단과 트레이드오프, AI는 노동과 반복 작업을 담당하는 AI 개발 공장 템플릿입니다. Spec-Driven Development, Test-Driven Development, Security-First 원칙을 한 번에 세팅합니다.",
-    category: "developer-tools",
-    stack: ["Markdown", "YAML", "Bash", "GitHub Actions", "Prompt Engineering"],
-    highlights: [
-      "초기 세팅용 & 운영용 2개 AI 프롬프트 분리",
-      "5개 역할 에이전트 (@PM, @Architect, @Dev, @QA, @SecOps)",
-      "Lite/Standard/Enterprise 규모별 적용 가이드",
-    ],
-    featured: true,
-  },
-  {
     slug: "hwp-bridge",
     name: "HwpBridge",
     summary: "한글 파일(HWP) Rust 파싱 & MCP 서버",

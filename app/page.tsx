@@ -13,7 +13,7 @@ export default function Home() {
           {[
             {
               label: "프로젝트",
-              value: "26+",
+              value: "25+",
               detail: "AI · SaaS · 자동화 제품",
             },
             {
