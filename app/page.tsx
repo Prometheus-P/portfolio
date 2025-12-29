@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
 
       {/* Featured Projects Section */}
-      <section className="px-6 pt-8 pb-24 lg:pt-12 lg:pb-32">
+      <section className="px-6 pt-16 pb-24 lg:pt-20 lg:pb-32 border-t-4 border-black">
         <div className="mx-auto max-w-6xl">
           {/* Section Header */}
           <div className="flex flex-col gap-6 mb-12 pb-8 border-b border-black/[0.08] md:flex-row md:items-end md:justify-between lg:mb-14 lg:pb-10">
